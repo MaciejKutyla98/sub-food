@@ -1,0 +1,17 @@
+.footer {
+  background-color: #006400;
+  border-top: 1px solid #006400;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 30px;
+  width: 100%;
+
+  &__text {
+    color: #fff;
+    font-size: 24px;
+    font-family: "Roboto Light";
+  }
+}
