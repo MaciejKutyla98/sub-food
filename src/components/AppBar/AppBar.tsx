@@ -12,8 +12,9 @@ import {styled, alpha} from "@mui/material";
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from "react-router-dom";
+import { pages} from "./pages";
 
-const pages = ['Recipes', 'Ingredients', 'Constraints'];
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -77,7 +78,11 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="static" sx={{backgroundColor: '#006400'}}>
+        <AppBar position="static" sx={{
+            backgroundColor: '#006400',
+            zIndex: '999',
+            position: 'fixed',
+        }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -128,8 +133,8 @@ const Header = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                                    <Link to={page.link}>{page.title}</Link>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -154,13 +159,16 @@ const Header = () => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
+                            <Link to={page.link}>
+                                <Button
+                                    key={page.title}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page.title}
+                                </Button>
+                            </Link>
+
                         ))}
                     </Box>
                     <Search>
