@@ -5,6 +5,7 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 30px 30px;
+  font-family: 'Mali';
   grid-template-areas:
     "ingredients image"
     "recipe recipe";
@@ -60,10 +61,12 @@
   border: 2px solid #006400 !important;
   padding: 8px !important;
   margin-right: 50px !important;
+  font-family: 'Mali' !important;
 }
 
 .MuiListItemText-primary {
   font-size: 16px !important;
+  font-family: 'Mali' !important;
 }
 
 .recipe-element {
@@ -84,6 +87,9 @@ ol li::marker {
   color: #006400;
   font-weight: bold;
   font-size: 24px;
+}
+.MuiDialog-container {
+  opacity: 1 !important;
 }
 
 /* width */

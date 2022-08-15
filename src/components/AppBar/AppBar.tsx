@@ -93,10 +93,10 @@ const Header = () => {
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
+                            fontFamily: 'Mali',
+                            color: 'white',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
@@ -133,7 +133,7 @@ const Header = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page.title} onClick={handleCloseNavMenu} sx={{textDecoration: 'none'}}>
+                                <MenuItem key={page.title} onClick={handleCloseNavMenu} sx={{textDecoration: 'none', fontFamily: 'Mali',}}>
                                     <Link to={page.link}>{page.title}</Link>
                                 </MenuItem>
                             ))}
@@ -148,7 +148,7 @@ const Header = () => {
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
                             flexGrow: 1,
-                            fontFamily: 'monospace',
+                            fontFamily: 'Mali',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
@@ -163,7 +163,7 @@ const Header = () => {
                                 <Button
                                     key={page.title}
                                     onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none'}}
+                                    sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none', fontFamily: 'Mali'}}
                                 >
                                     {page.title}
                                 </Button>
