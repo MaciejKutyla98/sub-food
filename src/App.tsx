@@ -10,18 +10,22 @@ import {
 } from "react-router-dom";
 import Recipes from "./components/Recipes/Recipes";
 import Ingredients from "./components/Ingredients/Ingredients";
+import {DishDetails} from "./components/DishDetails/DishDetails";
 
 function App() {
   return (
     <div className="App">
         <BrowserRouter>
             <Header></Header>
-            <Routes>
-                <Route path="/" element={<Recipes />} />
-                <Route path="/recipes" element={<Recipes />} />
-                <Route path="/ingredients" element={<Ingredients />} />
-                <Route path="/constraints" element={<Constraints />} />
-            </Routes>
+            <div className='content'>
+                <Routes>
+                    <Route path="/" element={<Recipes />} />
+                    <Route path="/recipes" element={<Recipes />} />
+                    <Route path="/ingredients" element={<Ingredients />} />
+                    <Route path="/constraints" element={<Constraints />} />
+                    <Route path="/recipes/spaghetti" element={<DishDetails />} />
+                </Routes>
+            </div>
         <Footer></Footer>
         </BrowserRouter>
     </div>

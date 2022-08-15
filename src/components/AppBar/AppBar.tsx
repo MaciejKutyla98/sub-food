@@ -14,7 +14,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from "react-router-dom";
 import { pages} from "./pages";
-
+import './AppBar.scss';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -133,7 +133,7 @@ const Header = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+                                <MenuItem key={page.title} onClick={handleCloseNavMenu} sx={{textDecoration: 'none'}}>
                                     <Link to={page.link}>{page.title}</Link>
                                 </MenuItem>
                             ))}
@@ -163,7 +163,7 @@ const Header = () => {
                                 <Button
                                     key={page.title}
                                     onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                    sx={{ my: 2, color: 'white', display: 'block', textDecoration: 'none'}}
                                 >
                                     {page.title}
                                 </Button>
@@ -171,15 +171,15 @@ const Header = () => {
 
                         ))}
                     </Box>
-                    <Search>
-                        <SearchIconWrapper>
-                            <SearchIcon />
-                        </SearchIconWrapper>
-                        <StyledInputBase
-                            placeholder="Search…"
-                            inputProps={{ 'aria-label': 'search' }}
-                        />
-                    </Search>
+                    {/*<Search>*/}
+                    {/*    <SearchIconWrapper>*/}
+                    {/*        <SearchIcon />*/}
+                    {/*    </SearchIconWrapper>*/}
+                    {/*    <StyledInputBase*/}
+                    {/*        placeholder="Search…"*/}
+                    {/*        inputProps={{ 'aria-label': 'search' }}*/}
+                    {/*    />*/}
+                    {/*</Search>*/}
                 </Toolbar>
             </Container>
         </AppBar>
